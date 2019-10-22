@@ -20,7 +20,7 @@ After cloning this repository do the following to run the "benchmarks" locally.
 # Native "benchmark"
 cargo t --release -- --nocapture
 # Wasm/js
-wasm-pack build
+wasm-pack build --release
 cd www
 npm install
 npm run start

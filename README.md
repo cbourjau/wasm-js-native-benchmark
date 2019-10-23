@@ -8,10 +8,11 @@ floating point numbers. This is also the part of the program where
 most time is spend, but it is a common think in scientific computing,
 so I left it in the benchmarks. 
 
-I am quite surprised to see such stark difference between Firefox
+~~I am quite surprised to see such stark difference between Firefox
 (wasm & js), Chrome (wasm & js), and native compilation for my
-platform (x86_64-unknown-linux-gnu). All benchmarks where performed
-with `lto=true` on rustc 1.38.
+platform (x86_64-unknown-linux-gnu)~~. **Edit**: Seems like I ran the test with a cached wasm file on Firefox. After clearing the cache, the results are more as I expected, i.e. native < wasm < js.
+
+All benchmarks were performed with `lto=true` compiled in release mode with on rustc 1.38.
 
 ## Execution
 
@@ -29,12 +30,12 @@ npm run start
 
 ## Results
 - Firefox 69:
-  - wasm avg. of 5 runs: 8568.8 ms
-  - js avg. of 5 runs: 1241.1 ms
+  - wasm avg. of 5 runs: ~~8568.8 ms~~ 1340ms
+  - js avg. of 5 runs: ~~1241.1 ms~~ 1400ms
 - Chromium 76 (Note: Chromium was considerably slower on a "cold" run
   in wasm than in the following warm ones):
-  - wasm avg. of 5 runs: 1239.3 ms (warm)
-  - js avg. of 5 runs: 5598.0 ms
+  - wasm avg. of 5 runs: 1240 ms (warm)
+  - js avg. of 5 runs: 5600 ms
 - Native
-  - avg. of 5 runs: 981.8 ms
+  - avg. of 5 runs: 982 ms
 

@@ -5,8 +5,8 @@ computations. This crate computes π using an outlandishly inefficient
 Monte Carlo algorithm (requiring a PRNG). The point is to get a rough
 idea of the execution speeds. The algorithm used generates 2e8 random
 floating point numbers. This is also the part of the program where
-most time is spend, but it is a common think in scientific computing,
-so I left it in the benchmarks. 
+most time is spend, but it is a common thing in scientific computing,
+so I left it in the benchmarks. Also note that the PRNG implementations in the js and Rust code are different! So take these numbers with a pack of salt.
 
 ~~I am quite surprised to see such stark difference between Firefox
 (wasm & js), Chrome (wasm & js), and native compilation for my
